@@ -1,0 +1,41 @@
+/*
+ * Copyright (c) 2022/3/14.
+ */
+
+/* Start CSS for navbar.css */
+
+/* root */
+
+:root {
+    --title-font-size: 6vh;
+}
+
+/* beacons */
+
+header {
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+    width: 70%;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--font-color);
+    margin: 2vh auto 10vh;
+}
+
+/* classes */
+
+.navbar-item {
+    display: flex;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-title {
+    font-size: var(--title-font-size);
+    font-weight: bold;
+}
+
+/* End CSS for navbar.css */

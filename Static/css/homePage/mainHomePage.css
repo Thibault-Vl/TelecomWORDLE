@@ -1,0 +1,80 @@
+/*
+    Author : Thibault Cheneviere
+    Discord : Thibô#0001
+    Mail : thibault.cheneviere@telecomnancy.eu
+    Date : 13/02/2022
+*/
+/* Start CSS for main.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+:root {
+    --grid-color-background: #0077c7;
+
+    /* size config */
+    --cell-size: 5vw;
+    --cell-border-thickness: 1px;
+    --cell-padding-thickness: 2px;
+    --icon-size: 32px;
+    --font-size: 2vw;
+
+    /* case colors regarding letter placement */
+    --well-placed-color: #e7002a;
+    --bad-placed-color: #ffbd00;
+    --not-found-color: rgb(112, 112, 112);
+
+
+    --icon-color: rgb(200, 200, 200);
+    --background-rgb-color: 43, 43, 43;
+    --background-color: rgb(var(--background-rgb-color));
+    --border-color: #ffffff;
+    --grid-border-color: #ffffff;
+    --font-color: #ffffff;
+    --font-grid-color: #ffffff;
+}
+
+/* beacons */
+
+/* classes */
+
+.home-banner {
+    color: var(--font-color);
+    text-align: center;
+    font-size: 6vw;
+}
+
+.grid {
+    margin-top: 5vh;
+}
+
+.grid table {
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 0;
+    background-color: var(--grid-color-background);
+    font-size: var(--font-size);
+}
+
+.grid td {
+    width: calc(var(--cell-size) - 2 * var(--cell-padding-thickness));
+    height: calc(var(--cell-size) - 2 * var(--cell-padding-thickness));
+    text-align: center;
+    position: relative;
+    padding: var(--cell-padding-thickness);
+    color: var(--font-grid-color);
+    border: 1px solid var(--grid-border-color);
+    z-index: 0;
+}
+
+.grid td.bad-place {
+    background-color: var(--bad-placed-color);
+    border-radius: 50%;
+}
+
+.grid td.good-place {
+    background-color: var(--well-placed-color);
+}
+
+.grid td.not-found {
+    background-color: var(--grid-color-background);
+}

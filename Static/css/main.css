@@ -1,0 +1,23 @@
+/*
+    Author : Thibault Cheneviere
+    Discord : Thibô#0001
+    Mail : thibault.cheneviere@telecomnancy.eu
+    Date : 13/02/2022
+*/
+/* Start CSS for main.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+/* root */
+
+:root {
+    --main-color: #39343b;
+}
+
+/* beacons */
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    background: var(--main-color);
+}
