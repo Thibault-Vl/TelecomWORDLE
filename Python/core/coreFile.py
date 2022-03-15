@@ -9,6 +9,7 @@
 # Import needed packages
 from pathlib import Path
 from typing import List
+import json
 
 
 def get_path(i: int) -> str:
@@ -35,3 +36,41 @@ def read_file(filename: str, filetype: str, folder: str) -> List:
         data = file.readlines()
 
     return data
+
+
+def read_json(filename: str) -> dict:
+    """
+           Function to read a json file
+
+           Parameters :
+               - filename (string) : filename
+
+           Returns :
+               - data (dict) : data stored in the json file
+    """
+
+    cwd = get_path(2)
+    cwd += '/data/json/' + filename + '.' + 'json'
+
+    with open(cwd, 'r') as file:
+        data = json.load(file)
+
+    return data
+
+
+def write_json(data: dict, filename: str) -> None:
+    """
+        Function to modify a json file.
+
+        Parameters :
+            - data (dict) : modification of the json file
+            - filename (string) : name of the json file to modify
+
+        Returns :
+            None
+    """
+
+    cwd = get_path(2)
+
+    with open(cwd + '/data/json/' + filename + '.json', 'w') as file:
+        json.dump(data, file, indent=4)

@@ -6,6 +6,10 @@
 
 {% extends 'layout.html' %}
 
+    {% block title %}
+        TUSMO
+    {% endblock title %}
+
     {% block header %}
         <!-- CSS dependencies -->
         <link rel='stylesheet' type="text/css" href="/Static/css/homePage/mainHomePage.css">
@@ -14,8 +18,9 @@
         <!-- JQuery dependencies -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-        <!-- Page title -->
-        <title>TOSMU</title>
+        <!-- Howler dependencies -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+
     {% endblock header %}
 
     {% block container %}
@@ -24,29 +29,16 @@
                 <tr>
                     <td>{{ hiddenWord[0] }}</td>
                     {% for letter in hiddenWord[1:] %}
-                        <td></td>
+                        <td>.</td>
                     {% endfor %}
                 </tr>
-                <tr>
-                    {% for letter in hiddenWord %}
-                        <td></td>
-                    {% endfor %}
-                </tr>
-                <tr>
-                    {% for letter in hiddenWord %}
-                        <td></td>
-                    {% endfor %}
-                </tr>
-                <tr>
-                    {% for letter in hiddenWord %}
-                        <td></td>
-                    {% endfor %}
-                </tr>
-                <tr>
-                    {% for letter in hiddenWord %}
-                        <td></td>
-                    {% endfor %}
-                </tr>
+                {% for i in range(1, tries) %}
+                    <tr>
+                        {% for letter in hiddenWord %}
+                            <td></td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
             </table>
         </div>
 
