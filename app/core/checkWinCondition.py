@@ -4,10 +4,12 @@
 from typing import Dict
 
 # Import personal modules
-from Python.core.countWordLetters import countWordLetters
+from app.core.countWordLetters import countWordLetters
 
 
-def checkWinCondition(userWord: str, requiredWord: str, currentTry: int) -> Dict[str, bool]:
+def checkWinCondition(userWord: str, requiredWord: str, currentTry: int, maxTries: int) -> Dict[str, bool]:
+    assert len(userWord) == len(requiredWord)
+
     wordData = countWordLetters(requiredWord)
 
     data = {
@@ -15,7 +17,7 @@ def checkWinCondition(userWord: str, requiredWord: str, currentTry: int) -> Dict
         'winStatement': False
     }
 
-    if currentTry <= 5 and requiredWord != userWord:
+    if currentTry <= maxTries and requiredWord != userWord:
         data['statement'] = True
     else:
         data['statement'] = False
@@ -27,6 +29,7 @@ def checkWinCondition(userWord: str, requiredWord: str, currentTry: int) -> Dict
         if userWord[i] in requiredWord:
             if userWord[i] == requiredWord[i]:
                 data['css'][i] = "good-place"
+                wordData[userWord[i]] -= 1
             elif wordData[userWord[i]] > 0:
                 data['css'][i] = "bad-place"
                 wordData[userWord[i]] -= 1

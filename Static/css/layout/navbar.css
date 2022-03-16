@@ -33,6 +33,16 @@ header {
     align-items: center;
 }
 
+.navbar-link {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--font-color);
+}
+
+.navbar-link:hover {
+    color: var(--font-color);
+}
+
 .navbar-title {
     font-size: var(--title-font-size);
     font-weight: bold;

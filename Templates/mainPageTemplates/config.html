@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+<div class="config-form popup-form">
+    <div class="close-btn">&times;</div>
+    <h2 class="form-title">Configuration</h2>
+    <div class="form-element">
+        <label for="config-maxletters">Nombre de lettre par mot</label>
+        <input type="range" id="config-maxletters" value="{{ wordlength }}" min="5" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+        <output>{{ wordlength }}</output>
+    </div>
+    <button class="submit-button" id="validate-config-modification" onclick="sendConfigModification()">Enregister les modifications</button>
+</div>

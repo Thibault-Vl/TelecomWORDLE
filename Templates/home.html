@@ -14,6 +14,7 @@
         <!-- CSS dependencies -->
         <link rel='stylesheet' type="text/css" href="/Static/css/homePage/mainHomePage.css">
         <link rel="stylesheet" type="text/css" href="/Static/css/homePage/confettiAnimation.css">
+        <link rel="stylesheet" type="text/css" href="/Static/css/homePage/mainPopup.css">
 
         <!-- JQuery dependencies -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -24,7 +25,7 @@
     {% endblock header %}
 
     {% block container %}
-        <div class="grid" id="grid">
+        <div class="grid under-popup-content" id="grid">
             <table>
                 <tr>
                     <td>{{ hiddenWord[0] }}</td>
@@ -42,6 +43,9 @@
             </table>
         </div>
 
+        {% include "mainPageTemplates/config.html" %}
+
+        <script type="text/javascript" src="/Static/Javascript/homePage/configPopup.js"></script>
         <script type="text/javascript" src="/Static/Javascript/keyboardTyping.js"></script>
         <script type="text/javascript" src="/Static/Javascript/validateLetters.js"></script>
         <script type="text/javascript" src="/Static/Javascript/confetti.js"></script>

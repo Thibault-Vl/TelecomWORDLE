@@ -6,7 +6,7 @@ import random
 from unidecode import unidecode
 
 # Import personal package
-from Python.core.coreFile import read_file
+from app.core.coreFile import read_file
 
 
 def takeRandomWord(wordlength: int):

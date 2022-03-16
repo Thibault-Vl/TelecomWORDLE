@@ -1,9 +1,9 @@
 // Init base url value
 const getUrl = window.location;
 const baseUrl = getUrl .protocol + "//" + getUrl.host;
-const queryString = window.location.search;
 
 // Handle parameters
+const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const wordLenght = parseInt(urlParams.get("wordlength"));
 
